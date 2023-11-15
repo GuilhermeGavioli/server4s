@@ -12,6 +12,12 @@ const db = require("./mysql");
 const { validationResult, query } = require('express-validator');
 
 
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/ggsrc.tech/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/ggsrc.tech/fullchain.pem'),
+};
+
+
 // const db = null
 
 const { createClient } = require("redis");
@@ -106,6 +112,8 @@ app.use((req, res, next) => {
   // res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+
+const server = https.createServer(options, app);
 
 app.post("/l", handleLogin);
 // app.post("/create-product", validateAndSanitizeUserData, handleLogin);
@@ -741,7 +749,7 @@ app.get("/auth/google/callback", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 80, () => {
+server.listen(process.env.PORT || 80, () => {
   console.log("listening");
 });
 
