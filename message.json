@@ -1,0 +1,30 @@
+{
+    "messages": {
+        "conversation-494a9dca4": {
+            "between": {
+                "user-1": {
+                    "id": "9ad4ca8d9c4a98",
+                    "name": "Joao"
+                },
+                "user-2": {
+                    "id": "eaddcabd7c4222",
+                    "name": "Harpanjo"
+                }
+            },
+            "messages":{
+                "message-9bcey448a3": {
+                    "text": "Hello!",
+                    "senderId": "9ad4ca8d9c4a98",
+                    "receiverId": "eaddcabd7c4222",
+                    "timestamp": 1633748701
+                  },
+                  "message-4a984dc4a8": {
+                    "text": "Hi there, how are you!",
+                    "senderId": "eaddcabd7c4222",
+                    "receiverId": "9ad4ca8d9c4a98",
+                    "timestamp": 1633748750
+                  }
+            }
+        }
+    }
+}
